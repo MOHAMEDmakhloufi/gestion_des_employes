@@ -1,0 +1,37 @@
+<!-- repos.component.html -->
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Gestion des Repos</h1>
+  
+    <!-- Add Repo Form -->
+    <div class="mb-4" *ngIf="showAddForm">
+      <input type="text" class="border rounded px-3 py-2 mb-2 w-full" placeholder="Code" [(ngModel)]="newRepo.code">
+      <input type="text" class="border rounded px-3 py-2 mb-2 w-full" placeholder="Designation" [(ngModel)]="newRepo.designation">
+      <input type="text" class="border rounded px-3 py-2 mb-2 w-full" placeholder="Couleur" [(ngModel)]="newRepo.couleur">
+      <button (click)="addRepo()" class="bg-blue-500 text-white px-4 py-2 rounded">Ajouter</button>
+    </div>
+  
+    <!-- Repos Table -->
+    <div class="overflow-x-auto mt-4">
+      <table class="min-w-full divide-y divide-gray-200 table-auto">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Designation</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Couleur</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let repo of repos">
+            <td class="px-6 py-4 whitespace-nowrap">{{ repo.code }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ repo.designation }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ repo.couleur }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <button (click)="deleteRepo(repo.code)" class="bg-red-500 text-white px-4 py-2 rounded">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+  

@@ -1,0 +1,28 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Tableau de Bord</h1>
+    <div class="overflow-x-auto mt-4">
+      <table class="min-w-full divide-y divide-gray-200 table-auto">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employé</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre d'absences</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Congés</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre de retards</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre d'heures supplémentaires</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let item of tableauDeBord">
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.code }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.employe.nom }} {{ item.employe.prenom }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.nbre_absences }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.conges }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.nbre_de_retards }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ item.nbre_heures_supp }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

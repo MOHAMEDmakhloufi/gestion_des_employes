@@ -1,0 +1,38 @@
+<!-- src/app/pointeuse/pointeuse.component.html -->
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Pointeuses</h1>
+    <button (click)="openAddPointeuseModal()" class="bg-blue-500 text-white px-4 py-2 rounded mb-4">Ajouter Pointeuse</button>
+    <div class="overflow-x-auto mt-4">
+      <table class="min-w-full divide-y divide-gray-200 table-auto">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Libelle</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Port</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Site</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Filiale</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Societe</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let pointeuse of pointeuses">
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.code }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.libelle }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.ip }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.port }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.site }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.filiale }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ pointeuse.societe }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <button (click)="deletePointeuse(pointeuse.code)" class="bg-red-500 text-white px-4 py-2 rounded">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <app-pointeuse-form [show]="showPointeuseForm" (close_)="closePointeuseForm()" (submit)="addPointeuse($event)"></app-pointeuse-form>
+  </div>
+  
