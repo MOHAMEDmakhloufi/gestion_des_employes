@@ -19,6 +19,18 @@ import { FormsModule } from '@angular/forms';
 import { EmployeFormComponent } from './components/employe-form/employe-form.component';
 import { PointeuseFormComponent } from './components/pointeuse-form/pointeuse-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { PointagesHomeComponent } from './components/pointages-home/pointages-home.component';
+import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { PointageJournalierComponent } from './components/pointage-journalier/pointage-journalier.component';
+import { MachineComponent } from './components/machine/machine.component';
+import { HierarchieComponent } from './components/hierarchie/hierarchie.component';
+import { FilialeComponent } from './components/filiale/filiale.component';
+import { SiteComponent } from './components/site/site.component';
+import { ServiceComponent } from './components/service/service.component';
+import { ParametrageLogicielComponent } from './components/parametrage-logiciel/parametrage-logiciel.component';
+import { ParametragePointageComponent } from './components/parametrage-pointage/parametrage-pointage.component';
+import { RapportetstatistiqueComponent } from './components/rapportetstatistique/rapportetstatistique.component';
+import { PointageManquantComponent } from './components/pointage-manquant/pointage-manquant.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +49,19 @@ import { LoginComponent } from './components/login/login.component';
     PlanningFormComponent,
     EmployeFormComponent,
     PointeuseFormComponent,
-    LoginComponent
+    LoginComponent,
+    PointagesHomeComponent,
+    AcceuilComponent,
+    PointageJournalierComponent,
+    MachineComponent,
+    HierarchieComponent,
+    FilialeComponent,
+    SiteComponent,
+    ServiceComponent,
+    ParametrageLogicielComponent,
+    ParametragePointageComponent,
+    RapportetstatistiqueComponent,
+    PointageManquantComponent
   ],
   imports: [
     HttpClientModule,
