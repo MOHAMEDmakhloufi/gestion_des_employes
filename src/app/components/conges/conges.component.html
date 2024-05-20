@@ -1,0 +1,41 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Liste des Congés</h1>
+  
+    <!-- Filter Input -->
+    <div class="mb-4">
+      <input 
+        type="text" 
+        placeholder="Rechercher par Employé" 
+        [(ngModel)]="searchQuery" 
+        (input)="filterTable()"
+        class="border rounded px-3 py-2 w-full"
+      />
+    </div>
+  
+    <!-- Congés Table -->
+    <div class="overflow-x-auto mt-4">
+      <table class="min-w-full divide-y divide-gray-200 table-auto">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code Employé</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employé</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Du</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Au</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date de Reprise</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cas de Congé</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr *ngFor="let conge of filteredConges">
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.codeEmploye }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.employe }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.dateDu }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.dateAu }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.dateDeReprise }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ conge.casDeConge }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

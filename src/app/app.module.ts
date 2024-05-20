@@ -31,6 +31,10 @@ import { ParametrageLogicielComponent } from './components/parametrage-logiciel/
 import { ParametragePointageComponent } from './components/parametrage-pointage/parametrage-pointage.component';
 import { RapportetstatistiqueComponent } from './components/rapportetstatistique/rapportetstatistique.component';
 import { PointageManquantComponent } from './components/pointage-manquant/pointage-manquant.component';
+import { HeuresSuppComponent } from './components/heures-supp/heures-supp.component';
+import { RetardComponent } from './components/retard/retard.component';
+import { AbsencesComponent } from './components/absences/absences.component';
+import { CongesComponent } from './components/conges/conges.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,11 @@ import { PointageManquantComponent } from './components/pointage-manquant/pointa
     ParametrageLogicielComponent,
     ParametragePointageComponent,
     RapportetstatistiqueComponent,
-    PointageManquantComponent
+    PointageManquantComponent,
+    HeuresSuppComponent,
+    RetardComponent,
+    AbsencesComponent,
+    CongesComponent
   ],
   imports: [
     HttpClientModule,

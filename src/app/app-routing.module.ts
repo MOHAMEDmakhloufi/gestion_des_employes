@@ -24,6 +24,10 @@ import { ParametrageLogicielComponent } from './components/parametrage-logiciel/
 import { ParametragePointageComponent } from './components/parametrage-pointage/parametrage-pointage.component';
 import { RapportetstatistiqueComponent } from './components/rapportetstatistique/rapportetstatistique.component';
 import { PointageManquantComponent } from './components/pointage-manquant/pointage-manquant.component';
+import { HeuresSuppComponent } from './components/heures-supp/heures-supp.component';
+import { AbsencesComponent } from './components/absences/absences.component';
+import { CongesComponent } from './components/conges/conges.component';
+import { RetardComponent } from './components/retard/retard.component';
 
 const routes: Routes = [
   { path: 'planning', component: PlanningComponent, canActivate:[AdminGuard] },
@@ -47,6 +51,10 @@ const routes: Routes = [
   { path: 'rapport-et-statistique', component: RapportetstatistiqueComponent, canActivate:[AdminGuard] },
   { path: 'tableau-de-bord', component: TableauDeBordComponent, canActivate:[AdminGuard] },
   { path: 'pointage-manquant', component: PointageManquantComponent, canActivate:[AdminGuard] },
+  { path: 'heures-supp', component: HeuresSuppComponent, canActivate:[AdminGuard] },
+  { path: 'retard', component: RetardComponent, canActivate:[AdminGuard] },
+  { path: 'absences', component: AbsencesComponent, canActivate:[AdminGuard] },
+  { path: 'conges', component: CongesComponent, canActivate:[AdminGuard] },
   { path: 'login', component: LoginComponent },
   { path: '', component: AcceuilComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
